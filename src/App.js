@@ -17,10 +17,10 @@ let App = () => {
   let [signedIn, dispatch] = useReducer(reducer, false);
 
   return (
-    <>
+    <div>
       <UxNavBar />
       {signedIn ? <Dashboard /> : <UxLogin dispatch={dispatch} signedIn={signedIn} />}
-    </>
+    </div>
   )
 };
 
