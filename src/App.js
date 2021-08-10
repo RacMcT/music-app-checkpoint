@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import React, { useReducer } from 'react';
 import './App.css';
+import UxLogin from './Components/UxLogin'
+import UxNavBar from './Components/UxNavBar'
+import Dashboard from './Components/Dashboard';
 
-function App() {
+let App = () => {
+
+  let reducer = (state, action) => {
+    switch (action.type) {
+      case 'signOn':
+        return action.payload
+      default: return state;
+    };
+  };
+
+  let [signedIn, dispatch] = useReducer(reducer, false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+      <UxNavBar />
+      {signedIn ? <Dashboard /> : <UxLogin dispatch={dispatch} signedIn={signedIn} />}
+    </>
+  )
+};
 
 export default App;
