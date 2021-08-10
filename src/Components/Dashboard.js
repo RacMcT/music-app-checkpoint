@@ -77,7 +77,17 @@ let Dashboard = (props) => {
             marginLR={''}
             jsx={<UxSwitch dispatch={dispatch} online={vals.online} />} />
 
+<UxCard
+            header={uxTxt.Slider.header}
+            desc={uxTxt.Slider.desc}
+            marginLR={marginLR}
+            jsx={<UxSlider dispatch={dispatch} volume={vals.volume} />} />
 
+          <UxCard
+            header={uxTxt.Select.header}
+            desc={uxTxt.Select.desc}
+            marginLR={''}
+            jsx={<UxSelect dispatch={dispatch} quality={vals.quality} />} />
 
         </section>
 
