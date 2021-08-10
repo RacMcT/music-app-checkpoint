@@ -34,7 +34,7 @@ let Dashboard = (props) => {
 
   useEffect(() => {
     setMsg(objMsg());
-    //eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, [vals]);
 
   let uxTxt = {
@@ -60,7 +60,7 @@ let Dashboard = (props) => {
     )
   };
 
-/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
   return (
 
     <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
@@ -77,17 +77,7 @@ let Dashboard = (props) => {
             marginLR={''}
             jsx={<UxSwitch dispatch={dispatch} online={vals.online} />} />
 
-          <UxCard
-            header={uxTxt.Slider.header}
-            desc={uxTxt.Slider.desc}
-            marginLR={marginLR}
-            jsx={<UxSlider dispatch={dispatch} volume={vals.volume} />} />
 
-          <UxCard
-            header={uxTxt.Select.header}
-            desc={uxTxt.Select.desc}
-            marginLR={''}
-            jsx={<UxSelect dispatch={dispatch} quality={vals.quality} />} />
 
         </section>
 
