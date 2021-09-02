@@ -20,7 +20,7 @@ let Dashboard = (props) => {
     };
   };
 
-  let [vals, dispatch] = useReducer(reducer, { online: true, volume: 70, quality: 1 });
+  let [vals, dispatch] = useReducer(reducer, { online: false, volume: 70, quality: 1 });
 
   let objMsg = () => {
     return {
@@ -44,6 +44,7 @@ let Dashboard = (props) => {
   };
 
   let marginLR = '45px';
+//put into css for easier troubleshooting in future :) 
 
   let SysNotifications = () => {
     let ar = []
@@ -75,7 +76,7 @@ let Dashboard = (props) => {
             header={uxTxt.Switch.header}
             desc={uxTxt.Switch.desc}
             marginLR={''}
-            jsx={<UxSwitch dispatch={dispatch} online={vals.online} />} />
+            jsx={<UxSwitch dispatch={dispatch} online={vals.online} actions={ACTIONS}/>} />
 
 <UxCard
             header={uxTxt.Slider.header}
